@@ -19,21 +19,19 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .models import User, Note
+    from .models import User, Note #a classokat beimportáljuk a models.py fájlból, before we create_database()
     
     with app.app_context():
-        db.create_all()
+        db.create_all()             # ADATBÁZIS LÉTREHOZÁSA
 
     login_manager = LoginManager()
-    login_manager.login_view = 'auth.login'
+    login_manager.login_view = 'auth.login' #where should flask redirect when login required, but not logged in
     login_manager.init_app(app)
 
     @login_manager.user_loader
     def load_user(id):
-        return User.query.get(int(id))
-
+        return User.query.get(int(id)) #which user we're looking for
     return app
-
 
 def create_database(app):
     if not path.exists('website/' + DB_NAME):
