@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Decks</title>
+</head>
+<body>
+    <a href="{{ url_for('add_card') }}"><button>Add Card</button></a>
+    <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+   
+    <br>
+
+    <h1>Query Me Daily</h1>
+
+    <p>My Daily Cards:</p>
+
+    <!-- Show my decks -->
+    <ul>
+        {% for card in user_cards %}
+            <li>
+   <!--         Card ID: {{ card['_id'] }}<br>-->
+                Side 1: {{ card["side1"] }}<br>
+                Side 2: {{ card["side2"] }}<br><br>
+    <!--            Decklabel: {{ card['decklabel'] }}<br>-->
+            </li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

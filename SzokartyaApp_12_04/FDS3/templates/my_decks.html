@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Decks</title>
+</head>
+<body>
+    <a href="{{ url_for('add_card') }}"><button>Add Card</button></a>
+    <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+   
+    <br>
+
+    <h1>My Decks Page</h1>
+
+    <p>My Decks:</p>
+
+    <!-- Show my decks -->
+    <ul>
+        {% for deck in user_decks %}
+            <li>
+   <!--         Card ID: {{ deck['_id'] }}<br>-->
+                Side 1: {{ deck['side1'] }}<br>
+                Side 2: {{ deck['side2'] }}<br>
+                Decklabel: {{ deck['decklabel'] }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h1>Query me!</h1>
+
+    <a href="{{ url_for('query_me_daily') }}"><button>My New cards</button></a>
+    <br> <br>
+    <a href="{{ url_for('query_me_daily') }}"><button>My daily cards</button></a>
+    <br> <br>
+    <a href="{{ url_for('query_me_daily') }}"><button>My Weekly cards</button></a>
+    <br>
+
+    <!-- Form to Input Card Data -->
+    <form method="POST" action="{{ url_for('query_me_custom') }}">
+
+
+        <label for="decklabel">My Custom Decks:</label>
+        <input type="decklabel" id="decklabel" name="decklabel" required>
+        <a href="{{ url_for('query_me_custom') }}"><button>Send</button></a>
+        <br>
+
+
+    <!-- buttons -->
+
+
+</body>
+</html>

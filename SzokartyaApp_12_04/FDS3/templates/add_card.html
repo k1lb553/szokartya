@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Cards</title>
+</head>
+<body>
+
+    <h1>Add Cards</h1>
+
+    <!-- Form to Input Card Data -->
+    <form method="POST" action="{{ url_for('add_card') }}">
+
+        <label for="side1">Side 1:</label>
+        <input type="text" id="side1" name="side1" required>
+
+        <br>
+
+        <label for="side2">Side 2:</label>
+        <input type="text" id="side2" name="side2" required>
+
+        <br>
+
+        <label for="decklabel">Decklabel:</label>
+        <input type="text" id="decklabel" name="decklabel">
+
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit">Add Card</button>
+    </form>
+
+</body>
+</html>

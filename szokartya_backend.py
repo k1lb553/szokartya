@@ -1,6 +1,7 @@
 import random, string
 import datetime
 import pandas as pd
+
 """ ÖTLETEK:
 Az egyes nem tudott szavakat külön adatbázis-táblába rakni:
     pl minden új szót amit egy 20 napos időintervallumon belül tanutam, rakja bele egy táblába
@@ -11,32 +12,7 @@ Az egyes nem tudott szavakat külön adatbázis-táblába rakni:
 
 
 
-curr_now = datetime.datetime.now()
-curr_date = [curr_now.year, curr_now.month, curr_now.day]
-"""def szokeszites():
-    letters = string.ascii_lowercase
 
-    def randomword(lenght):
-        return "".join(random.choice(letters) for i in range(lenght))
-
-    def randszam():
-        return random.randrange(0, 7)
-
-    with open("szavak.csv", "w") as outp:
-        for i in range(50):
-            randw = randomword(5)
-            print("hu"+randw,";","en"+randw,";",randszam(),";",randszam(), file=outp)"""
-"""szolista = []
-for i in range(50):
-    randw = randomword(5)
-    szolista.append(["hu"+randw,    #0.magyar
-                     "en"+randw,    #1.angol
-                     0,        #2.tudasi_LVL
-                     0,        #3.T_datum
-                     0,        #4.T_db
-                     0,        #5.N_datum
-                     0,        #6.N_db
-                     ])"""
 knowledge = {
     0: "Unassigned",
     1 : "(1day)Today",

@@ -143,4 +143,4 @@ def add_address_relationship(str_person_id, embed_data):
     address_coll = production.address #új address nevű collection létrehozása a producion adatbázisban
     address_coll.insert_one(embed_data) 
 
-add_address_relationship("65631113d0958600099ac928", address)
+#add_address_relationship("65631113d0958600099ac928", address)

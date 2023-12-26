@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cards</title>
+</head>
+<body>
+
+    <h1>Welcome to My Cards Page</h1>
+
+    <p>Your cards:</p>
+
+    <!-- Display Cards -->
+    <ul>
+        {% for card in user_cards %}
+            <li>
+                Card ID: {{ card['_id'] }}<br>
+                Field 1: {{ card['field1'] }}<br>
+                Field 2: {{ card['field2'] }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add Card Button -->
+    <a href="{{ url_for('addcard') }}"><button>Add Card</button></a>
+    <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+
+</body>
+</html>
