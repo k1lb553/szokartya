@@ -12,7 +12,7 @@ app = Flask(__name__)
 login_manager = LoginManager(app)
 
 app.config["MONGO_URI"] = "mongodb://localhost:27017/SzokartyaApp12_04"
-app.secret_key = "hpAVBF572FOe6HLBsoZTxnapSNhO3L8T"  # Change this to a secure secret key
+app.secret_key = "#"  # Change this to a secure secret key
 mongo.init_app(app)
 users_coll = mongo.db.Users_coll
 knowledges = ["0_unassigned","1_1day","2_2day","3_3day","4_1week","5_1month","6_3month","7_6month","8_done"]
